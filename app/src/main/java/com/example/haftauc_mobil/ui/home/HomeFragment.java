@@ -56,9 +56,9 @@ public class HomeFragment extends Fragment {
 
         String sqlString = "INSERT INTO users (name,surname,year) VALUES (?,?,?)";
         SQLiteStatement sqLiteStatement = database.compileStatement(sqlString);
-        sqLiteStatement.bindString(1, "Mehmet");
-        sqLiteStatement.bindString(2, "DENİZ");
-        sqLiteStatement.bindString(3, "1994");
+        sqLiteStatement.bindString(1, "Muhammet");
+        sqLiteStatement.bindString(2, "ÇAYLI");
+        sqLiteStatement.bindString(3, "1992");
         sqLiteStatement.execute();
         int sayac = 0;
         Cursor cursor = database.rawQuery("SELECT * FROM users",null);
@@ -76,7 +76,7 @@ public class HomeFragment extends Fragment {
 
         sharedPreferences= this.getContext().getSharedPreferences("register",0);
         SharedPreferences.Editor editor=sharedPreferences.edit();
-        editor.putString("token","muhammetyavuzcayli@gmail.com");
+        editor.putString("token","ahmetmehmet@gmail.com");
         editor.commit();
         email.setText(sharedPreferences.getString("token",null));
         //Log.e("SHARED ::::: ", sharedPreferences.getString("token",null));
